@@ -1,5 +1,3 @@
-# Cours 3
-
 ## Typename & Typedef
 
 Typedef is defining a new type for use in your code, like a shorthand.
