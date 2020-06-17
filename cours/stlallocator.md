@@ -1,5 +1,3 @@
-# Cours 1
-
 Memento [Markdown](https://openclassrooms.com/fr/courses/1304236-redigez-en-markdown#/id/r-1304420)
 
 ## Introduction à la STL : Standard Template Library

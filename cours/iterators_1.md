@@ -1,6 +1,4 @@
-# Cours 2
-
-## Les itérateurs
+# Les itérateurs
 
 Plusieurs programmes de tests dans training/
 
@@ -39,6 +37,10 @@ Le template iterator comprend :
     typedef Category  iterator_category	--> le type (parmi les 1/2/3/4/5)
 
 La difference_type d'un int\* est donc ptrdiff_t puisque si p1 et p2 sont des pointeurs, p1 - p2 est égal à ptrdiff_t
+
+La partie suivante se base sur cet excellent [cours](https://users.cs.northwestern.edu/~riesbeck/programming/c++/stl-iterator-define.html)
+
+## Iterators from Nested Containers
 
 **Différence iterator / const iterator**
 
