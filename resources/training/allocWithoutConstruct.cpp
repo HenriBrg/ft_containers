@@ -4,7 +4,7 @@
 class Hello {
 
 	public:
-		Hello() { std::cout << "Constructor" << std::endl; }
+		Hello() { std::cout << "Constructor IS NOT CALLED" << std::endl; }
 		std::string getN() { return name; }
 		void setN(std::string param) { name = param; }
 
