@@ -6,7 +6,7 @@
 /*   By: henri <henri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/20 20:29:31 by henri             #+#    #+#             */
-/*   Updated: 2020/06/21 11:58:50 by henri            ###   ########.fr       */
+/*   Updated: 2020/06/21 17:56:39 by henri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class IteratorBase {
 	private:
 		IteratorBase();
 	protected:
-		T *_p; /* C++ Calling Convention : underscore for private variables */
+		T *_p;
 	public:
 		IteratorBase(T *p): _p(p) {};
 		virtual ~IteratorBase() {};
