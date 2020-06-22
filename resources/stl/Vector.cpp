@@ -59,8 +59,8 @@ int main() {
 	vector<int>::reference tabint_ref(tmp);
 	cout << tabint_ref << endl;
 
-	typename allocator<int>::reference test(tmp); /* just test to call from outside of template */
-	cout << "typename out of template : " << test << endl; // warning but works
+	// typename allocator<int>::reference test(tmp); /* just test to call from outside of template */
+	// cout << "typename out of template : " << test << endl; // warning but works
 
 	/* 4) */
 	cout << "--- 4) ::difference_type ::size_type ---" << endl;
@@ -87,6 +87,18 @@ int main() {
 
 	 int aaaa = stypevec.size( );
 	 cout << "sizetype = " << aaaa << endl;
+	 cout << "size_type typeid.str() return : "<< typeid(stypevec.size()).name() << endl;
 
+	 /* 5) --- Ways of initialization */
+	 cout << "--- 5) Ways of initialization --- " << endl;
+
+	 vector<int>();
+	 vector<int> way2(2);
+	 vector<int> way3(2, 3);
+	 vector<int> way4(way2.begin(), way2.end()); /* Avec 2 iterateurs */
+	 vector<int> way5(way2);
+	 vector<int> way6 = way2;
+	 int ti[] = {1, 2, 3};
+	 vector<int> way7(ti, ti + 2);
 
 }
