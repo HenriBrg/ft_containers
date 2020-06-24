@@ -93,6 +93,7 @@ int main() {
 	 cout << "--- 5) Ways of initialization --- " << endl;
 
 	 vector<int>();
+	 vector<int> way1;
 	 vector<int> way2(2);
 	 vector<int> way3(2, 3);
 	 vector<int> way4(way2.begin(), way2.end()); /* Avec 2 iterateurs */
