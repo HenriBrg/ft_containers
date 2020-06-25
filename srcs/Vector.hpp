@@ -6,12 +6,14 @@
 /*   By: henri <henri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/14 00:38:29 by henri             #+#    #+#             */
-/*   Updated: 2020/06/25 00:47:01 by henri            ###   ########.fr       */
+/*   Updated: 2020/06/26 00:25:19 by henri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # ifndef VECTOR_HPP
 # define VECTOR_HPP
+
+# define SHOW_FUNCTIONS_NAMES_AT_CALL 1
 
 /* Main documentation : https://docs.microsoft.com/fr-fr/cpp/standard-library/vector-class?view=vs-2019 */
 /* Source Code : https://code.woboq.org/llvm/libcxx/include/vector.html */
@@ -104,7 +106,7 @@ public:
 	/* https://www.tutorialspoint.com/cpp_standard_library/cpp_vector_default_constructor.htm */
 
 	/* Default Constructor - Use : vector<int> v; */
-	// explicit vector (const allocator_type & alloc = allocator_type());
+	explicit vector (const allocator_type & alloc = allocator_type());
 
 	/* Fill Constructor - Use : vector<int> v(5, 200); */
 	explicit vector (size_type n, const value_type & val = value_type(), const allocator_type & alloc = allocator_type() );
@@ -124,14 +126,26 @@ private:
 
 };
 
-/* Fill Constructor - Use : vector<int> v(5, 200); */
+/* Default Constructor - Used by : vector<int> v */
+
+template <typename T, typename A>
+vector<T, A>::vector(const allocator_type & alloc): _allocator(alloc), _size(0), _arr(NULL), _capacity(0) {
+	if (SHOW_FUNCTIONS_NAMES_AT_CALL)
+		std::cout << "Default Constructor : vector<int> vec" << std::endl;
+}
+
+/* Fill Constructor - Used by : vector<int> v(5, 200); */
 template <typename T, typename A>
 vector<T, A>::vector(size_type n, const value_type & value, const allocator_type & alloc): _allocator(alloc), _size(n), _capacity(n) {
+	if (SHOW_FUNCTIONS_NAMES_AT_CALL)
+		std::cout << "Two args Constructor : vector<int> vec(1, 2)" << std::endl;
 	_arr = _allocator.allocate(n);
 	for (size_type i = 0; i < n; i++) {
 		_allocator.construct(_arr + i, value);
 	}
 }
+
+/* Unique Destructor */
 
 template <typename T, typename A>
 vector<T, A>::~vector() {

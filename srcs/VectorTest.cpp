@@ -2,7 +2,6 @@
 # include "Vector.hpp"
 
 int main() {
-	std::cout << "Vector - Test";
-
-	ft::vector<int>(5, 10);
+	ft::vector<int> v;
+	ft::vector<int> v2(5, 10);
 }
