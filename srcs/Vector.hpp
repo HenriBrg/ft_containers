@@ -6,14 +6,14 @@
 /*   By: henri <henri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/14 00:38:29 by henri             #+#    #+#             */
-/*   Updated: 2020/06/26 00:25:19 by henri            ###   ########.fr       */
+/*   Updated: 2020/06/27 01:21:07 by henri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # ifndef VECTOR_HPP
 # define VECTOR_HPP
 
-# define SHOW_FUNCTIONS_NAMES_AT_CALL 1
+# define SHOW_FUNCTIONS_NAMES_AT_CALL 0
 
 /* Main documentation : https://docs.microsoft.com/fr-fr/cpp/standard-library/vector-class?view=vs-2019 */
 /* Source Code : https://code.woboq.org/llvm/libcxx/include/vector.html */
@@ -134,11 +134,13 @@ vector<T, A>::vector(const allocator_type & alloc): _allocator(alloc), _size(0),
 		std::cout << "Default Constructor : vector<int> vec" << std::endl;
 }
 
-/* Fill Constructor - Used by : vector<int> v(5, 200); */
+/* Range Constructor (if one argument is given - "value" will be set to 0) - Used by : vector<int> v(5) */
+/* Fill Constructor (if two argumentq are given) - Used by : vector<int> v(5, 200); */
+
 template <typename T, typename A>
 vector<T, A>::vector(size_type n, const value_type & value, const allocator_type & alloc): _allocator(alloc), _size(n), _capacity(n) {
 	if (SHOW_FUNCTIONS_NAMES_AT_CALL)
-		std::cout << "Two args Constructor : vector<int> vec(1, 2)" << std::endl;
+		std::cout << "Range / Fill Constructor : vector<int> vec(size) or vec(size, value)" << std::endl;
 	_arr = _allocator.allocate(n);
 	for (size_type i = 0; i < n; i++) {
 		_allocator.construct(_arr + i, value);
