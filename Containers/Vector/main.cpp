@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: francisberger <francisberger@student.42    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/12 19:14:29 by francisberg       #+#    #+#             */
-/*   Updated: 2020/08/14 20:29:24 by francisberg      ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <vector>
 #include "includes/Vector.hpp"
 #include "../../Tester/Tester.hpp"
@@ -67,7 +55,7 @@ void test_constructors(void)
     int VERBOSE;
     try { VERBOSE = std::stoi(getEnvVar("VERBOSE")); }
     catch(...) { VERBOSE = 0; }
-    
+
     PRINT_MAGENTA("*** VECTOR Constructors\n", DEBUG_CONSTRUCTORS && 1);
 
     // ------------------------------------------------------------------------
@@ -81,7 +69,7 @@ void test_constructors(void)
     PRINT("std::vector<int> std_v1;", DEBUG_CONSTRUCTORS && VERBOSE);
     std::vector<int> std_v1;
     DISPLAY_VECTOR(std_v1, "std_v1", DEBUG_CONSTRUCTORS && VERBOSE);
-    // ---    
+    // ---
     assert_vector_equals(std_v1, ft_v1, "constructor - default");
     // ------------------------------------------------------------------------
 
@@ -97,7 +85,7 @@ void test_constructors(void)
     PRINT("std::vector<int> std_v2(5, 2);", DEBUG_CONSTRUCTORS && VERBOSE);
     std::vector<int> std_v2(5, 2);
     DISPLAY_VECTOR(std_v2, "std_v2", DEBUG_CONSTRUCTORS && VERBOSE);
-    // ---    
+    // ---
     assert_vector_equals(std_v2, ft_v2, "constructor fill");
     // ------------------------------------------------------------------------
 
@@ -113,7 +101,7 @@ void test_constructors(void)
     PRINT("std::vector<int> std_v3(std_v2.begin(), std_v2.end());", DEBUG_CONSTRUCTORS && VERBOSE);
     std::vector<int> std_v3(std_v2.begin(), std_v2.end());
     DISPLAY_VECTOR(std_v3, "std_v3", DEBUG_CONSTRUCTORS && VERBOSE);
-    // ---    
+    // ---
     assert_vector_equals(std_v3, ft_v3, "constructor range");
     // ------------------------------------------------------------------------
 
@@ -129,7 +117,7 @@ void test_constructors(void)
     PRINT("std::vector<int> std_v4(std_v3);", DEBUG_CONSTRUCTORS && VERBOSE);
     std::vector<int> std_v4(std_v3);
     DISPLAY_VECTOR(std_v4, "std_v4", DEBUG_CONSTRUCTORS && VERBOSE);
-    // ---    
+    // ---
     assert_vector_equals(std_v4, ft_v4, "constructor copy");
     // ------------------------------------------------------------------------
 
@@ -149,7 +137,7 @@ void test_constructors(void)
     PRINT("std::vector<int> std_v5 = std_v4;", DEBUG_CONSTRUCTORS && VERBOSE);
     std::vector<int> std_v5 = std_v4;
     DISPLAY_VECTOR(std_v5, "std_v5", DEBUG_CONSTRUCTORS && VERBOSE);
-    // ---    
+    // ---
     assert_vector_equals(std_v5, ft_v5, "constructor assignation");
     // ------------------------------------------------------------------------
 }
@@ -159,7 +147,7 @@ void test_element_access(void)
     int VERBOSE;
     try { VERBOSE = std::stoi(getEnvVar("VERBOSE")); }
     catch(...) { VERBOSE = 0; }
-    
+
     PRINT_MAGENTA("*** VECTOR Element access\n", DEBUG_ELEMENT_ACCESS && 1);
 
     // ------------------------------------------------------------------------
@@ -180,7 +168,7 @@ void test_element_access(void)
     DISPLAY_VECTOR(std_v1, "std_v1", DEBUG_ELEMENT_ACCESS && VERBOSE);
     PRINT("std_v1.at(1)", DEBUG_ELEMENT_ACCESS && VERBOSE);
     PRINT(std_v1.at(1), DEBUG_ELEMENT_ACCESS && VERBOSE);
-    // ---    
+    // ---
     assert_value_equals(std_v1.at(1), ft_v1.at(1), "at()");
     // ------------------------------------------------------------------------
 
@@ -196,7 +184,7 @@ void test_element_access(void)
     DISPLAY_VECTOR(std_v1, "std_v1", DEBUG_ELEMENT_ACCESS && VERBOSE);
     PRINT("std_v1.front()", DEBUG_ELEMENT_ACCESS && VERBOSE);
     PRINT(std_v1.front(), DEBUG_ELEMENT_ACCESS && VERBOSE);
-    // ---    
+    // ---
     assert_value_equals(std_v1.front(), ft_v1.front(), "front");
     // ------------------------------------------------------------------------
 
@@ -212,7 +200,7 @@ void test_element_access(void)
     DISPLAY_VECTOR(std_v1, "std_v1", DEBUG_ELEMENT_ACCESS && VERBOSE);
     PRINT("std_v1.back()", DEBUG_ELEMENT_ACCESS && VERBOSE);
     PRINT(std_v1.back(), DEBUG_ELEMENT_ACCESS && VERBOSE);
-    // ---    
+    // ---
     assert_value_equals(std_v1.back(), ft_v1.back(), "back");
     // ------------------------------------------------------------------------
 
@@ -232,7 +220,7 @@ void test_element_access(void)
     PRINT("std_v1[1] = 8", DEBUG_ELEMENT_ACCESS && VERBOSE);
 	std_v1[1] = 8;
     DISPLAY_VECTOR(std_v1, "std_v1", DEBUG_ELEMENT_ACCESS && VERBOSE);
-    // ---    
+    // ---
     assert_value_equals(std_v1[1], ft_v1[1], "operator[]");
     // ------------------------------------------------------------------------}
 }
@@ -242,7 +230,7 @@ void test_capacity(void)
 	int VERBOSE;
 	try { VERBOSE = std::stoi(getEnvVar("VERBOSE")); }
 	catch(...) { VERBOSE = 0; }
-	
+
 	PRINT_MAGENTA("*** VECTOR Capacity\n", DEBUG_CAPACITY && 1);
 
 	ft::Vector<int> ft_v1;
@@ -258,7 +246,7 @@ void test_capacity(void)
 	DISPLAY_VECTOR(std_v1, "std_v1", DEBUG_CAPACITY && VERBOSE);
 	PRINT("std_v1.empty()", DEBUG_CAPACITY && VERBOSE);
 	PRINT(std_v1.empty(), DEBUG_CAPACITY && VERBOSE);
-	// ---    
+	// ---
 	assert_value_equals(std_v1.empty(), ft_v1.empty(), "empty if empty");
 	// ------------------------------------------------------------------------
 
@@ -273,7 +261,7 @@ void test_capacity(void)
 	// DISPLAY_VECTOR(std_v1, "std_v1", DEBUG_CAPACITY && VERBOSE);
 	PRINT("std_v1.size()", DEBUG_CAPACITY && VERBOSE);
 	PRINT(std_v1.size(), DEBUG_CAPACITY && VERBOSE);
-	// ---    
+	// ---
 	assert_value_equals(std_v1.size(), ft_v1.size(), "size if empty");
 	// ------------------------------------------------------------------------
 
@@ -288,7 +276,7 @@ void test_capacity(void)
 	// DISPLAY_VECTOR(std_v1, "std_v1", DEBUG_CAPACITY && VERBOSE);
 	PRINT("std_v1.max_size()", DEBUG_CAPACITY && VERBOSE);
 	PRINT(std_v1.max_size(), DEBUG_CAPACITY && VERBOSE);
-	// ---    
+	// ---
 	// assert_value_equals(std_v1.max_size(), ft_v1.max_size(), "max_size if empty");
 	// ------------------------------------------------------------------------
 
@@ -303,8 +291,8 @@ void test_capacity(void)
 	// DISPLAY_VECTOR(std_v1, "std_v1", DEBUG_CAPACITY && VERBOSE);
 	PRINT("std_v1.capacity()", DEBUG_CAPACITY && VERBOSE);
 	PRINT(std_v1.capacity(), DEBUG_CAPACITY && VERBOSE);
-	// ---    
-	assert_value_equals(std_v1.capacity(), ft_v1.capacity(), "capacity if empty"); 
+	// ---
+	assert_value_equals(std_v1.capacity(), ft_v1.capacity(), "capacity if empty");
 	// ------------------------------------------------------------------------
 
 	ft_v1.push_back(1);
@@ -313,7 +301,7 @@ void test_capacity(void)
 	std_v1.push_back(1);
 	std_v1.push_back(2);
 	DISPLAY_VECTOR(std_v1, "std_v1", DEBUG_CAPACITY && VERBOSE);
-	
+
 	// ------------------------------------------------------------------------
 	// empty
 	PRINT_BLUE("empty if not empty:", DEBUG_CAPACITY && VERBOSE);
@@ -323,7 +311,7 @@ void test_capacity(void)
 	// ---
 	PRINT("std_v1.empty()", DEBUG_CAPACITY && VERBOSE);
 	PRINT(std_v1.empty(), DEBUG_CAPACITY && VERBOSE);
-	// ---    
+	// ---
 	assert_value_equals(std_v1.empty(), ft_v1.empty(), "empty if not empty");
 	// ------------------------------------------------------------------------
 
@@ -338,7 +326,7 @@ void test_capacity(void)
 	// DISPLAY_VECTOR(std_v1, "std_v1", DEBUG_CAPACITY && VERBOSE);
 	PRINT("std_v1.size()", DEBUG_CAPACITY && VERBOSE);
 	PRINT(std_v1.size(), DEBUG_CAPACITY && VERBOSE);
-	// ---    
+	// ---
 	assert_value_equals(std_v1.size(), ft_v1.size(), "size if not empty");
 	// ------------------------------------------------------------------------
 
@@ -351,7 +339,7 @@ void test_capacity(void)
 	// ---
 	PRINT("std_v1.max_size()", DEBUG_CAPACITY && VERBOSE);
 	PRINT(std_v1.max_size(), DEBUG_CAPACITY && VERBOSE);
-	// ---    
+	// ---
 	// assert_value_equals(std_v1.max_size(), ft_v1.max_size(), "max_size if not empty");
 	// ------------------------------------------------------------------------
 
@@ -368,7 +356,7 @@ void test_capacity(void)
 	std_v1.reserve(100);
 	PRINT("std_v1.capacity();", DEBUG_CAPACITY && VERBOSE);
 	PRINT(std_v1.capacity(), DEBUG_CAPACITY && VERBOSE);
-	// ---    
+	// ---
 	assert_value_equals(std_v1.capacity(), ft_v1.capacity(), "reserve if not empty");
 	// ------------------------------------------------------------------------
 
@@ -381,7 +369,7 @@ void test_capacity(void)
 	// ---
 	PRINT("std_v1.capacity()", DEBUG_CAPACITY && VERBOSE);
 	PRINT(std_v1.capacity(), DEBUG_CAPACITY && VERBOSE);
-	// ---    
+	// ---
 	assert_value_equals(std_v1.capacity(), ft_v1.capacity(), "capacity if not empty");
 	// ------------------------------------------------------------------------
 }
@@ -403,18 +391,18 @@ void test_modifiers(void)
    	ft_v1.insert(ft_v1.begin(), 1);
    	ft_v1.insert(ft_v1.begin(), 0);
 	DISPLAY_VECTOR(ft_v1, "ft_v1 ", DEBUG_MODIFIERS && VERBOSE);
-	
+
 	std::vector<int> std_v1;
    	std_v1.push_back(0);
 	std_v1.insert(std_v1.begin(), 1);
 	std_v1.insert(std_v1.begin(), 0);
 	DISPLAY_VECTOR(std_v1, "std_v1", DEBUG_MODIFIERS && VERBOSE);
-	// ---	
+	// ---
 	assert_vector_equals(std_v1, ft_v1, "insert 1");
 	// ---
 	ft_v1.insert(ft_v1.begin(), 2, 2);
 	DISPLAY_VECTOR(ft_v1, "ft_v1 ", DEBUG_MODIFIERS && VERBOSE);
-	
+
 	std_v1.insert(std_v1.begin(), 2, 2);
 	DISPLAY_VECTOR(std_v1, "std_v1", DEBUG_MODIFIERS && VERBOSE);
 	// ---
@@ -426,7 +414,7 @@ void test_modifiers(void)
 	DISPLAY_VECTOR(ft_v2, "ft_v2 ", DEBUG_MODIFIERS && VERBOSE);
 	ft_v1.insert(ft_v1.begin(), ft_v2.begin(), ft_v2.end());
 	DISPLAY_VECTOR(ft_v1, "ft_v1 ", DEBUG_MODIFIERS && VERBOSE);
-	
+
 	std::vector<int> std_v2;
    	std_v2.push_back(0);
    	std_v2.insert(std_v2.begin(), 3);
@@ -444,22 +432,22 @@ void test_modifiers(void)
    	ft_v1.erase(ft_v1.begin());
    	ft_v1.erase(ft_v1.begin());
 	DISPLAY_VECTOR(ft_v1, "ft_v1 ", DEBUG_MODIFIERS && VERBOSE);
-	
+
 	std_v1.erase(std_v1.begin());
 	std_v1.erase(std_v1.begin());
 	DISPLAY_VECTOR(std_v1, "std_v1", DEBUG_MODIFIERS && VERBOSE);
-	// ---	
+	// ---
 	assert_vector_equals(std_v1, ft_v1, "erase 1");
 	// ---
 	ft_v1.erase(ft_v1.begin(), ft_v1.end());
 	DISPLAY_VECTOR(ft_v1, "ft_v1 ", DEBUG_MODIFIERS && VERBOSE);
-	
+
 	std_v1.erase(std_v1.begin(), std_v1.end());
 	DISPLAY_VECTOR(std_v1, "std_v1", DEBUG_MODIFIERS && VERBOSE);
 	// ---
 	assert_vector_equals(std_v1, ft_v1, "erase 2");
 	// ------------------------------------------------------------------------
-	
+
 	// ------------------------------------------------------------------------
 	// push_back
 	PRINT_BLUE("push_back", DEBUG_MODIFIERS && VERBOSE);
@@ -550,7 +538,7 @@ void test_modifiers(void)
 	// ---
 	assert_vector_equals(std_v1, ft_v1, "clear if not empty");
 	// ------------------------------------------------------------------------
-	
+
 	// ------------------------------------------------------------------------
 	// clear
 	PRINT_BLUE("clear if already empty", DEBUG_MODIFIERS && VERBOSE);
@@ -563,7 +551,7 @@ void test_modifiers(void)
 	DISPLAY_VECTOR(std_v1, "std_v1", DEBUG_MODIFIERS && VERBOSE);
 	// ---
 	assert_vector_equals(std_v1, ft_v1, "clear if already empty");
-	// ------------------------------------------------------------------------	
+	// ------------------------------------------------------------------------
 
 }
 

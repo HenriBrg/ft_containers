@@ -318,13 +318,6 @@ void test_modifiers(void)
     assert_list_equals(std_l1, ft_l1, "assign 2/2");
     // ------------------------------------------------------------------------
 
-    // /* C++11 PRINT_BLUE("Assign / init", DEBUG_MEMBER_FUNCTIONS && VERBOSE);
-    // PRINT("ft_l1.assign(5, 10);", DEBUG_MEMBER_FUNCTIONS && VERBOSE);
-    // auto it = {1, 2, 3, 4, 5};
-    // std::list<int> l7;
-    // l7.assign(it);
-    // DISPLAY_LIST(l7, "l7", DEBUG_MEMBER_FUNCTIONS && VERBOSE); */
-
     // ------------------------------------------------------------------------
     // pop_front - Delete first element (public member function )
     PRINT_BLUE("pop_front()", DEBUG_MEMBER_FUNCTIONS && VERBOSE);

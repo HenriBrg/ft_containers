@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Tester.hpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: francisberger <francisberger@student.42    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/05 23:36:52 by francisberg       #+#    #+#             */
-/*   Updated: 2020/08/13 19:29:13 by francisberg      ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef TESTER_HPP
 #define TESTER_HPP
 
@@ -18,7 +6,7 @@
 # include <iostream>
 # include <string>
 # include <iomanip>
-# include <string> 
+# include <string>
 # include <memory>
 # include <stdlib.h>
 # include <sstream>
@@ -161,10 +149,10 @@ void display_queue(queue q, std::string name, const int LOG)
 
         int len_content = std::to_string(tmp).length();
         int len_index = std::to_string(index).length();
-        
+
 		ss1 << "--" << index << std::string(len_content - len_index, '-') << "--" << "   ";
         ss2 << "| " << CYAN_C << std::to_string(tmp) << RESET << " |" << "-->";
-        
+
         index++;
 
 		q.pop();
@@ -243,7 +231,7 @@ void display_stack(stack s, std::string name, const int LOG)
 	{
 		typename stack::value_type tmp = s.top();
         int len_content = std::to_string(tmp).length();
-        int len_index = std::to_string(index).length();        
+        int len_index = std::to_string(index).length();
 		ss1 << "--" << index << std::string(len_content - len_index, '-') << "--" << "   ";
         ss2 << "| " << CYAN_C << std::to_string(tmp) << RESET << " |" << "-->";
         index++;
@@ -450,7 +438,7 @@ void display_map_ft(ft::Map<key_type, value_type> &m, std::string name, const in
 
 	typename ft::Map<key_type, value_type>::iterator it = m.begin();
 	typename ft::Map<key_type, value_type>::iterator ite = m.end();
-    
+
 	while (it != ite)
     {
         int len_content = 1;
@@ -484,7 +472,7 @@ void display_map_std(map m, std::string name, const int LOG)
 
 	typename map::iterator it = m.begin();
 	typename map::iterator ite = m.end();
-    
+
 	while (it != ite)
     {
         int len_content = 1;

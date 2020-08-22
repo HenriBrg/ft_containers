@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Vector.hpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: francisb <francisb@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/31 23:05:55 by francisb          #+#    #+#             */
-/*   Updated: 2020/08/17 11:34:42 by henri            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef VECTOR_HPP
 # define VECTOR_HPP
 
@@ -28,11 +16,6 @@
 ** --- Reverse Random Access Iterator	class
 ** --- Vector                      		class
 ** --- Non member functions				nm
-*/
-
-/*
-** Todo:
-** ok all
 */
 
 namespace ft
@@ -153,17 +136,6 @@ namespace ft
 			{
 				return (get_content() != src.get_content());
 			}
-
-			// https://en.cppreference.com/w/cpp/named_req/RandomAccessIterator
-			// a < b	contextually convertible to bool	b - a > 0	Strict total ordering relation:
-			// !(a < a)
-			// if a < b then !(b < a)
-			// if a < b and b < c then a < c
-			// a < b or b < a or a == b
-			// (exactly one of the expressions is true)
-			// a > b	contextually convertible to bool	b < a	Total ordering relation opposite to a < b
-			// a >= b	contextually convertible to bool	!(a < b)
-			// a <= b	contextually convertible to bool	!(a > b)
 
 			VectorIterator<T> operator++()
 			{
@@ -417,6 +389,9 @@ namespace ft
 				init_empty_vector(0);
 			}
 
+
+			/* -- ICI -- */
+
 			// fill
 			Vector(size_type n, const value_type& val = value_type()):
 				m_tab(NULL), m_size(0), m_cap(0)
@@ -647,7 +622,6 @@ namespace ft
 				if (!count)
 					return ;
 
-				// don't move this line beside reserve() call since begin() change with new allocation
 				difference_type pos_index = pos - begin();
 
 				if (m_size + count >= m_cap)
@@ -675,8 +649,6 @@ namespace ft
 				if (m_size + count >= m_cap)
 					reserve(m_size + count);
 
-				// décaler [ a, b, c, d ] -> [ 0, 0, a, b, c, d ]
-				//                 4        2            2      5
 				for (size_t i = (m_size + count - 1); i >= count; i--)
 					m_allocator.construct(&m_tab[i], m_tab[i - count]);
 
@@ -789,7 +761,7 @@ namespace ft
 				return (false);
 		}
 		if (lhs.size() == rhs.size())
-			return (false); // meaning ==
+			return (false);
 		else if (lhs.size() < rhs.size())
 			return (true);
 		else

@@ -83,6 +83,7 @@ namespace ft
 
 		void insert_as_prev(Elem *e)
 		{
+			// si le current a un prev, on glisse le tmp, autrement on insère juste avant le this
 			if (m_prev)
 			{
 				e->m_prev = m_prev;
@@ -103,6 +104,7 @@ namespace ft
 			m_next = e;
 		}
 
+		// efface le current
 		void detach(void) {
 			if (m_prev)
 				m_prev->m_next = m_next;
@@ -398,6 +400,7 @@ namespace ft
 				m_end->m_next = NULL;
 			}
 			
+			// merging
 			void push_back_list(List& src)
 			{
 				if (src.empty())
@@ -646,9 +649,10 @@ namespace ft
 					pop_front();
 				else if (m_len >= 1)
 				{
-					Elem<T> *e = m_end->m_prev;
+					// Pas de création, juste un tmp pour delete trkl
+					Elem<T> *tmp = m_end->m_prev;
 					m_end->m_prev->detach();
-					delete e;
+					delete tmp;
 					--m_len;
 				}
 			}
@@ -677,7 +681,9 @@ namespace ft
 				}
 				else if (m_len >= 1)
 				{
+					// tmp
 					Elem<T> *tmp = m_begin->m_next;
+					// suppression du début
 					m_begin->detach();
 					delete m_begin;
 					m_begin = tmp;
@@ -685,6 +691,7 @@ namespace ft
 				}
 			}
 
+			// proto : http://www.cplusplus.com/reference/list/list/resize/
 			void resize(size_type n, value_type val = value_type())
 			{
 				if (n >= m_len)
@@ -796,6 +803,7 @@ namespace ft
 					for (size_t i = 0; i < m_len; i++)
 					{
 						next = e->m_next;
+						// equivalent pointeur sur function binary_pred, dont l'usage doit evidement correspondre au proto de binary_pred
 						if (e->m_prev && (*binary_pred)(e->m_prev->m_content, e->m_content))
 							erase(iterator(e));
 						e = next;
