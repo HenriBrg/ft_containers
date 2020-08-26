@@ -1,15 +1,3 @@
-/* ************************************************************************** QUEUE */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: francisberger <francisberger@student.42    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/12 19:14:29 by francisberg       #+#    #+#             */
-/*   Updated: 2020/08/06 23:25:06 by francisberg      ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** QUEUE */
-
 #include <queue>
 #include "includes/Queue.hpp"
 #include "../../Tester/Tester.hpp"

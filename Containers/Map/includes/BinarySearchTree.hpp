@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   BinarySearchTree.hpp                               :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: francisberger <francisberger@student.42    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/09 23:27:23 by francisberg       #+#    #+#             */
-/*   Updated: 2020/08/14 20:40:38 by francisberg      ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef BST_HPP
 #define BST_HPP
 
@@ -22,16 +10,6 @@
 # include <memory>
 # include <iostream>
 # include <string>
-
-/*
-** Summary:
-** --- x. ---
-*/
-
-/*
-** Todo:
-** 
-*/
 
 namespace ft
 {
@@ -136,8 +114,9 @@ namespace ft
 					** --- Element access
 					*/
 
+					// * Retourne la valeur - Idem qu'en C
 					std::pair<Key,T>& operator*() { return (m_elem->m_pair); }
-
+					// Idem qu'en C
 					std::pair<Key,T>* operator->() { return (&m_elem->m_pair); }
 
 					// ----------------------------------------------------------------
@@ -255,7 +234,7 @@ namespace ft
 								m_elem = m_elem->m_top;
 							}
 						}
-						else // ?
+						else
 						{
 							m_elem = m_root;
 							while (m_elem && m_elem->m_right)
@@ -745,7 +724,7 @@ namespace ft
 			*/
 
 			// 0 - point d'entrée
-			Elem *find_pair(std::pair<Key,T> p) 
+			Elem *find_pair(std::pair<Key,T> p) // appel de base pour rechercher
 			{ 
 				Elem *e = find(p.first);
 				if (e)
@@ -769,7 +748,8 @@ namespace ft
 			}
 
 			// 3 - find from root with key
-			Elem *findElemWithKey(struct Elem *root, Key k) 
+			// pseudo récursivité
+			Elem *findElemWithKey(struct Elem *root, Key k)
 			{
 				if (root == m_end)
 					return (NULL);

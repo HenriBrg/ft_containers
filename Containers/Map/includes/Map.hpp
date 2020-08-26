@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Map.hpp                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: francisberger <francisberger@student.42    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/09 23:23:26 by francisberg       #+#    #+#             */
-/*   Updated: 2020/08/14 20:32:51 by francisberg      ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef MAP_HPP
 # define MAP_HPP
 
@@ -78,7 +66,7 @@ namespace ft
 
 			typedef typename	BST<Key,
 									T,
-									Compare>::BSTIterator 			reverse_iterator;
+									Compare>::ReverseBSTIterator 	reverse_iterator;
 
 			typedef typename	BST<Key const,
 									T const,

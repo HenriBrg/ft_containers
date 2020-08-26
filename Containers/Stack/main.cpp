@@ -1,15 +1,3 @@
-/* ************************************************************************** STACK */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: francisberger <francisberger@student.42    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/12 19:14:29 by francisberg       #+#    #+#             */
-/*   Updated: 2020/08/06 23:38:45 by francisberg      ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** STACK */
-
 #include <stack>
 #include "includes/Stack.hpp"
 #include "../../Tester/Tester.hpp"
