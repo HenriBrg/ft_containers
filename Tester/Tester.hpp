@@ -393,16 +393,21 @@ void assert_map_equals(STD std, FT ft, std::string const &feature)
 {
 	if (std.empty() && ft.empty())
 	{
+        std::cout << "EMPTY" << std::endl;
     	PASS_SUCCESS(feature)
 		return;
 	}
 	else if (std.size() != ft.size())
 	{
+                std::cout << "SIZE" << std::endl;
+
 		PRINT_ERROR("error size")
 		return;
 	}
     else
     {
+                std::cout << "ELSE" << std::endl;
+
         typename STD::iterator std_ite = std.begin();
         typename FT::iterator ft_ite = ft.begin();
 
