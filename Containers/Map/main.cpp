@@ -261,7 +261,7 @@ void test_capacity(void)
 	PRINT("std_m1.max_size()", DEBUG_CONSTRUCTORS && VERBOSE);
 	PRINT(std_m1.max_size(), DEBUG_ELEMENT_ACCESS && VERBOSE);
 	// ---    
-	// assert_value_equals(std_m1.max_size(), ft_m1.max_size(), "max_size");
+	assert_value_equals(std_m1.max_size(), ft_m1.max_size(), "max_size");
 	// ------------------------------------------------------------------------
 
 }

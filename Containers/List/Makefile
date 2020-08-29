@@ -1,6 +1,6 @@
 CC			=	clang++
 
-VERSION		= 	# -std=c++98
+VERSION		= 	-std=c++98
 
 CPPFLAGS	=	-Wall -Werror -Wextra -g
 
