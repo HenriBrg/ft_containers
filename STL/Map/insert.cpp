@@ -9,7 +9,6 @@ int main ()
   // first insert function version (single parameter):
   mymap.insert ( std::pair<char,int>('a',100) );
   mymap.insert ( std::pair<char,int>('z',200) );
-
   std::pair<std::map<char,int>::iterator,bool> ret;
   ret = mymap.insert ( std::pair<char,int>('z',500) );
   if (ret.second==false) {
@@ -19,8 +18,11 @@ int main ()
 
   // second insert function version (with hint position):
   std::map<char,int>::iterator it = mymap.begin();
-  mymap.insert (it, std::pair<char,int>('b',300));  // max efficiency inserting
+  std::map<char,int>::iterator it2;
+  it2 = mymap.insert (it, std::pair<char,int>('b',300));  // max efficiency inserting
   mymap.insert (it, std::pair<char,int>('c',400));  // no max efficiency inserting
+
+    std::cout << "--> " << it2->first << std::endl;
 
   // third insert function version (range insertion):
   std::map<char,int> anothermap;
