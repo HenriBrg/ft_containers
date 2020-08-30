@@ -1090,12 +1090,11 @@ namespace ft
 				while (e->m_left)
 					e = e->m_left;
 				m_begin = e;
-				
+			
 				e = m_root;				
 				while (e->m_right)
 					e = e->m_right;
 				e->m_right = m_end;
-				
 				m_end->m_top = e;
 			}
 

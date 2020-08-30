@@ -399,7 +399,6 @@ void test_modifiers(void)
 	DISPLAY_MAP_FT(ft_m1, "ft_m1 ", DEBUG_CONSTRUCTORS && VERBOSE);
 	// ---
 	std_m1.clear();
-	PRINT("std segfault", DEBUG_ELEMENT_ACCESS && VERBOSE);
 	DISPLAY_MAP_STD(std_m1, "std_m1", DEBUG_CONSTRUCTORS && VERBOSE);
 	// ---
 	assert_map_equals(std_m1, ft_m1, "clear if already empty");
