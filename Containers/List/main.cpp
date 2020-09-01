@@ -72,6 +72,9 @@ bool comp(int a, int b) {
    return (a > b);
 }
 
+
+
+
 /*
 ** TESTS
 */
@@ -247,6 +250,8 @@ void test_capacity(void)
     // ---
     PRINT(std_l1.max_size(), DEBUG_CAPACITY && VERBOSE);
     // ---    
+    assert_value_equals(std_l1.max_size(), ft_l1.max_size(), "max_size - if not empty");
+
     // ------------------------------------------------------------------------
 }
 
@@ -679,8 +684,8 @@ void test_operations(void)
     // ---
     // ---
     // ---
-    // assert_list_equals(std_l1, ft_l1, "merge 2/2 - src");
-    // assert_list_equals(std_l2, ft_l2, "merge 2/2 - dest");
+    assert_list_equals(std_l1, ft_l1, "merge 2/2 - src");
+    assert_list_equals(std_l2, ft_l2, "merge 2/2 - dest");
     // ------------------------------------------------------------------------
 }
 
@@ -819,5 +824,48 @@ int main(void)
     test_modifiers();
     test_operations();
     test_non_member_functions();
-    return (0);
+
+  ft::List<int> mylist;
+  for (int i=1; i<=5; ++i) mylist.push_back(i);
+  std::cout << "mylist backwards:";
+  for (ft::List<int>::reverse_iterator rit=mylist.rbegin(); rit!=mylist.rend(); ++rit)
+    std::cout << ' ' << *rit;
+  std::cout << '\n';
+
+    std::list<int> mylist2;
+  for (int i=1; i<=5; ++i) mylist2.push_back(i);
+  std::cout << "mylist backwards:";
+  for (std::list<int>::reverse_iterator rit=mylist2.rbegin(); rit!=mylist2.rend(); ++rit)
+    std::cout << ' ' << *rit;
+  std::cout << '\n';
+
+  // ---------------
+
+  // std::list<int> test;
+  // test.push_back(10);
+  // test.push_back(20);
+  // test.push_back(30);
+  // std::list<int>::iterator it = test.begin();
+  // it--;
+  // it--;
+  // std::cout << *it << std::endl;
+  // std::list<int>::iterator it2 = test.end();
+  // it2++;
+  // std::cout << *it2 << std::endl;
+
+  // // ----------------
+
+  // ft::List<int> test2;
+  // test2.push_back(10);
+  // test2.push_back(20);
+  // test2.push_back(30);
+  // ft::List<int>::iterator xit = test2.begin();
+  // xit--;
+  // xit--;
+  // std::cout << *xit << std::endl;
+
+  //   ft::List<int>::iterator xit2 = test2.end();
+  // xit2++;
+  // std::cout << *xit2 << std::endl;
+
 }

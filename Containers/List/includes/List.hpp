@@ -537,7 +537,9 @@ namespace ft
 
 			size_t size() const { return (m_len); }
 			
-			size_type max_size() const { return (std::numeric_limits<difference_type>::max()); }
+			size_type max_size() const { 
+				return std::numeric_limits<std::size_t>::max() / (sizeof(ft::List<value_type>) - sizeof(pointer));
+			}
 			
 			// ----------------------------------------------------------------
 

@@ -709,5 +709,19 @@ int main()
     test_capacity();
     test_modifiers();
     test_non_member_functions();
-    return (0);
-}
+
+  ft::Vector<int> myvec;
+  for (int i=1; i<=5; ++i) myvec.push_back(i);
+  std::cout << "myvec backwards:";
+  for (ft::Vector<int>::reverse_iterator rit=myvec.rbegin(); rit!=myvec.rend(); ++rit)
+    std::cout << ' ' << *rit;
+  std::cout << '\n';
+
+    std::vector<int> myvec2;
+  for (int i=1; i<=5; ++i) myvec2.push_back(i);
+  std::cout << "myvec backwards:";
+  for (std::vector<int>::reverse_iterator rit=myvec2.rbegin(); rit!=myvec2.rend(); ++rit)
+    std::cout << ' ' << *rit;
+  std::cout << '\n';
+  
+  }

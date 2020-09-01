@@ -187,7 +187,10 @@ namespace ft
 
 			size_t size() const { return (m_tree.size()); }
 
-			size_t max_size() const { return (std::numeric_limits<difference_type>::max()); }
+			size_t max_size() const { 
+				return (std::min((size_type) std::numeric_limits<difference_type>::max(),
+						std::numeric_limits<size_type>::max() / (sizeof(elem_type) + sizeof(pointer))));
+			}
 
 			// ----------------------------------------------------------------
 

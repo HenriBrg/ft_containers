@@ -556,7 +556,10 @@ namespace ft
 
 			size_t size() const { return (m_size); }
 
-			size_t max_size() const { return (std::numeric_limits<difference_type>::max()); }
+			size_t max_size() const { 
+				return (std::min((size_type) std::numeric_limits<difference_type>::max(),
+						std::numeric_limits<size_type>::max() / sizeof(value_type)));
+			 }
 
 			void reserve(size_type new_cap)
 			{
