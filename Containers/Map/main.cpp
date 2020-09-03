@@ -649,13 +649,4 @@ int main()
     test_lookup();
     test_non_member_functions();
 
-
-	// std::map<char, int> one;
-	// ft::Map<char, int> two;
-	// one['A'] = 100;
-	// two['A'] = 100;
-	// std::cout << one.max_size() << std::endl;
-	// std::cout << two.max_size() << std::endl;
-
-    // return (0);
 }
